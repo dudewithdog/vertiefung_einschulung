@@ -7,40 +7,80 @@
 
   <style>
     :root {
-      --ink:#241c18; --muted:#665852; --paper:#fff8f1; --paper-2:#f5ece3;
-      --line:rgba(36,28,24,.16); --shadow:0 18px 44px rgba(42,30,24,.11);
+      --ink:#241c18;
+      --muted:#665852;
+      --paper:#fff8f1;
+      --paper-2:#f5ece3;
+      --line:rgba(36,28,24,.16);
+      --shadow:0 18px 44px rgba(42,30,24,.11);
 
-      --magenta:#b14c75; --magenta-dark:#873453;
-      --red:#b80f24; --red-soft:#ffe8eb;
-      --blue:#1f7897; --blue-soft:#e4f5fb;
-      --black:#29292d; --black-soft:#eeeeee;
-      --purple:#68148d; --purple-soft:#f2e3fa;
+      --magenta:#b14c75;
+      --magenta-dark:#873453;
 
-      --rose-bg:#ffe8f1; --rose-mid:#fff7fa; --rose-accent:#b14c75;
-      --sand-bg:#fff0d2; --sand-mid:#fff9ee; --sand-accent:#b87428;
-      --violet-bg:#eee5ff; --violet-mid:#fbf8ff; --violet-accent:#68529d;
-      --sage-bg:#e5f5eb; --sage-mid:#f7fff9; --sage-accent:#3f8a62;
-      --peach-bg:#ffe9dc; --peach-mid:#fff8f4; --peach-accent:#bf6644;
-      --mist-bg:#eeeeea; --mist-mid:#fbfbf8; --mist-accent:#756e5f;
+      --red:#b80f24;
+      --blue:#1f7897;
+      --black:#29292d;
+      --purple:#68148d;
 
-      --radius-xl:30px; --radius-lg:22px; --radius-md:16px; --radius-sm:12px;
+      --rose-bg:#ffe8f1;
+      --rose-mid:#fff7fa;
+      --rose-accent:#b14c75;
+
+      --sand-bg:#fff0d2;
+      --sand-mid:#fff9ee;
+      --sand-accent:#b87428;
+
+      --violet-bg:#eee5ff;
+      --violet-mid:#fbf8ff;
+      --violet-accent:#68529d;
+
+      --sage-bg:#e5f5eb;
+      --sage-mid:#f7fff9;
+      --sage-accent:#3f8a62;
+
+      --peach-bg:#ffe9dc;
+      --peach-mid:#fff8f4;
+      --peach-accent:#bf6644;
+
+      --mist-bg:#eeeeea;
+      --mist-mid:#fbfbf8;
+      --mist-accent:#756e5f;
+
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
     }
 
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
+    * {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+    }
 
     body {
-      margin:0; color:var(--ink);
+      margin:0;
+      color:var(--ink);
       background:
         radial-gradient(circle at 0 0, rgba(177,76,117,.18), transparent 34rem),
         radial-gradient(circle at 100% 100%, rgba(184,116,40,.13), transparent 34rem),
         linear-gradient(180deg,#fffaf6 0%,var(--paper) 56%,var(--paper-2) 100%);
       font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
-      font-size:18px; line-height:1.56;
+      font-size:18px;
+      line-height:1.56;
     }
 
-    .page { min-height:100vh; padding:34px 18px 60px; }
-    .wrap { max-width:1060px; margin:0 auto; }
+    .page {
+      min-height:100vh;
+      padding:34px 18px 60px;
+    }
+
+    .wrap {
+      max-width:1060px;
+      margin:0 auto;
+    }
 
     header {
       padding:34px 32px 30px;
@@ -51,219 +91,474 @@
     }
 
     .kicker {
-      display:inline-block; margin-bottom:18px; padding:7px 13px 6px;
-      border:1px solid rgba(177,76,117,.38); border-radius:999px;
-      color:var(--magenta-dark); background:#f5dce7;
-      font-family:Arial, Helvetica, sans-serif; font-size:.76rem; font-weight:800;
-      letter-spacing:.09em; text-transform:uppercase;
+      display:inline-block;
+      margin-bottom:18px;
+      padding:7px 13px 6px;
+      border:1px solid rgba(177,76,117,.38);
+      border-radius:999px;
+      color:var(--magenta-dark);
+      background:#f5dce7;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.09em;
+      text-transform:uppercase;
     }
 
     h1 {
-      max-width:850px; margin:0; font-size:clamp(2.25rem,5.2vw,4.45rem);
-      line-height:.97; font-weight:700; letter-spacing:-.04em;
+      max-width:850px;
+      margin:0;
+      font-size:clamp(2.25rem,5.2vw,4.45rem);
+      line-height:.97;
+      font-weight:700;
+      letter-spacing:-.04em;
     }
 
     .subtitle {
-      max-width:790px; margin:22px 0 0; color:var(--muted);
+      max-width:790px;
+      margin:22px 0 0;
+      color:var(--muted);
       font-size:clamp(1.06rem,1.9vw,1.24rem);
     }
 
     nav {
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
       font-family:Arial, Helvetica, sans-serif;
     }
 
     nav a {
-      display:inline-flex; align-items:center; min-height:38px; padding:8px 13px;
-      border:1px solid var(--line); border-radius:999px; color:var(--ink);
-      background:rgba(255,255,255,.72); text-decoration:none; font-size:.9rem;
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:8px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--ink);
+      background:rgba(255,255,255,.72);
+      text-decoration:none;
+      font-size:.9rem;
     }
 
-    main { display:grid; gap:22px; margin-top:24px; }
+    nav a:hover {
+      border-color:rgba(177,76,117,.45);
+      background:rgba(255,255,255,.92);
+    }
+
+    main {
+      display:grid;
+      gap:22px;
+      margin-top:24px;
+    }
 
     section {
-      --section-bg:#fff; --section-mid:#fff; --section-accent:var(--magenta);
-      position:relative; overflow:hidden; padding:30px;
-      border:1px solid rgba(36,28,24,.14); border-radius:var(--radius-lg);
+      --section-bg:#fff;
+      --section-mid:#fff;
+      --section-accent:var(--magenta);
+
+      position:relative;
+      overflow:hidden;
+      padding:30px;
+      border:1px solid rgba(36,28,24,.14);
+      border-radius:var(--radius-lg);
       background:linear-gradient(135deg,var(--section-bg) 0%,var(--section-mid) 100%);
       box-shadow:var(--shadow);
     }
 
     section::before {
-      content:""; position:absolute; inset:0 auto 0 0; width:9px;
-      background:var(--section-accent); opacity:.85;
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:9px;
+      background:var(--section-accent);
+      opacity:.85;
     }
 
-    .sec-kurz { --section-bg:var(--rose-bg); --section-mid:var(--rose-mid); --section-accent:var(--rose-accent); }
-    .sec-zeit { --section-bg:var(--sand-bg); --section-mid:var(--sand-mid); --section-accent:var(--sand-accent); }
-    .sec-rueck { --section-bg:var(--violet-bg); --section-mid:var(--violet-mid); --section-accent:var(--violet-accent); }
-    .sec-betreuung { --section-bg:var(--sage-bg); --section-mid:var(--sage-mid); --section-accent:var(--sage-accent); }
-    .sec-ordner { --section-bg:var(--peach-bg); --section-mid:var(--peach-mid); --section-accent:var(--peach-accent); }
-    .sec-check { --section-bg:var(--mist-bg); --section-mid:var(--mist-mid); --section-accent:var(--mist-accent); }
-    .sec-quellen { --section-bg:#fff0f6; --section-mid:#fff9fb; --section-accent:var(--magenta); }
+    .sec-kurz {
+      --section-bg:var(--rose-bg);
+      --section-mid:var(--rose-mid);
+      --section-accent:var(--rose-accent);
+    }
+
+    .sec-zeit {
+      --section-bg:var(--sand-bg);
+      --section-mid:var(--sand-mid);
+      --section-accent:var(--sand-accent);
+    }
+
+    .sec-rueck {
+      --section-bg:var(--violet-bg);
+      --section-mid:var(--violet-mid);
+      --section-accent:var(--violet-accent);
+    }
+
+    .sec-betreuung {
+      --section-bg:var(--sage-bg);
+      --section-mid:var(--sage-mid);
+      --section-accent:var(--sage-accent);
+    }
+
+    .sec-ordner {
+      --section-bg:var(--peach-bg);
+      --section-mid:var(--peach-mid);
+      --section-accent:var(--peach-accent);
+    }
+
+    .sec-check {
+      --section-bg:var(--mist-bg);
+      --section-mid:var(--mist-mid);
+      --section-accent:var(--mist-accent);
+    }
+
+    .sec-quellen {
+      --section-bg:#fff0f6;
+      --section-mid:#fff9fb;
+      --section-accent:var(--magenta);
+    }
 
     .section-head {
-      display:flex; align-items:flex-start; justify-content:space-between;
-      gap:16px; margin-bottom:14px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:14px;
     }
 
     .section-label {
-      flex:0 0 auto; padding:7px 10px 6px; border-radius:999px; color:white;
-      background:var(--section-accent); font-family:Arial, Helvetica, sans-serif;
-      font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+      flex:0 0 auto;
+      padding:7px 10px 6px;
+      border-radius:999px;
+      color:white;
+      background:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
       box-shadow:0 8px 18px rgba(42,30,24,.13);
     }
 
-    h2 { margin:0; font-size:clamp(1.6rem,2.9vw,2.28rem); line-height:1.08; letter-spacing:-.025em; }
-    h3 { margin:0 0 8px; font-family:Arial, Helvetica, sans-serif; font-size:.98rem; letter-spacing:.01em; }
-    p { margin:0 0 14px; }
-    p:last-child { margin-bottom:0; }
-    a { color:var(--magenta-dark); text-underline-offset:3px; text-decoration-thickness:1px; }
+    h2 {
+      margin:0;
+      font-size:clamp(1.6rem,2.9vw,2.28rem);
+      line-height:1.08;
+      letter-spacing:-.025em;
+    }
 
-    .split { display:grid; grid-template-columns:1.08fr .92fr; gap:18px; align-items:start; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
+    h3 {
+      margin:0 0 8px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.98rem;
+      letter-spacing:.01em;
+    }
 
-    .card, .quote-box, .micro-card, .time-item, .checklist li, .tag {
+    p {
+      margin:0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom:0;
+    }
+
+    a {
+      color:var(--magenta-dark);
+      text-underline-offset:3px;
+      text-decoration-thickness:1px;
+    }
+
+    .split {
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+
+    .card,
+    .quote-box,
+    .micro-card,
+    .time-item,
+    .checklist li,
+    .tag {
       background:rgba(255,255,255,.68);
       border:1px solid rgba(36,28,24,.13);
       box-shadow:0 7px 18px rgba(42,30,24,.045);
     }
 
-    .card { padding:18px; border-radius:var(--radius-md); }
-    .quote-box { padding:19px 20px; border-radius:18px; }
-
-    .micro-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:16px; }
-    .micro-card {
-      min-height:72px; padding:11px 12px 10px; border-radius:var(--radius-sm);
-      font-family:Arial, Helvetica, sans-serif; font-size:.78rem; line-height:1.35;
+    .card {
+      padding:18px;
+      border-radius:var(--radius-md);
     }
+
+    .quote-box {
+      padding:19px 20px;
+      border-radius:18px;
+    }
+
+    .micro-row {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .micro-card {
+      min-height:72px;
+      padding:11px 12px 10px;
+      border-radius:var(--radius-sm);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.78rem;
+      line-height:1.35;
+    }
+
     .micro-card b {
-      display:block; margin-bottom:4px; color:var(--section-accent);
-      font-size:.72rem; letter-spacing:.07em; text-transform:uppercase;
+      display:block;
+      margin-bottom:4px;
+      color:var(--section-accent);
+      font-size:.72rem;
+      letter-spacing:.07em;
+      text-transform:uppercase;
     }
 
     .praxisnotiz {
-      display:block; margin-top:12px; padding:10px 12px 9px;
-      border-left:4px solid var(--section-accent); border-radius:0 12px 12px 0;
-      color:var(--muted); background:rgba(255,255,255,.58);
-      font-family:Arial, Helvetica, sans-serif; font-size:.75rem; line-height:1.42;
+      display:block;
+      margin-top:12px;
+      padding:10px 12px 9px;
+      border-left:4px solid var(--section-accent);
+      border-radius:0 12px 12px 0;
+      color:var(--muted);
+      background:rgba(255,255,255,.58);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.75rem;
+      line-height:1.42;
     }
-    .praxisnotiz strong { color:var(--section-accent); font-weight:800; }
+
+    .praxisnotiz strong {
+      color:var(--section-accent);
+      font-weight:800;
+    }
 
     .pin-row {
       display:flex;
       flex-wrap:wrap;
-      gap:6px;
+      gap:7px;
       margin:8px 0 12px;
       align-items:center;
     }
 
     .pin {
+      width:34px;
+      height:34px;
       display:inline-grid;
-      grid-template-columns:22px auto;
-      align-items:center;
-      min-height:28px;
-      max-width:max-content;
-      border-radius:999px;
-      border:1px solid rgba(36,28,24,.14);
-      background:rgba(255,255,255,.72);
-      overflow:hidden;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:.68rem;
-      font-weight:800;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      line-height:1;
-      box-shadow:0 5px 12px rgba(42,30,24,.055);
-    }
-
-    .pin i {
-      display:grid;
       place-items:center;
-      height:100%;
-      min-height:28px;
-      color:white;
-      font-style:normal;
-      font-size:.64rem;
-      letter-spacing:.03em;
+      border-radius:9px;
+      border:1px solid rgba(36,28,24,.14);
+      box-shadow:0 5px 12px rgba(42,30,24,.08);
     }
 
-    .pin span {
-      padding:0 8px 0 7px;
-      white-space:nowrap;
+    .pin svg {
+      width:21px;
+      height:21px;
+      stroke:#fff;
+      fill:none;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
     }
 
-    .pin-ordner { color:var(--red); background:linear-gradient(90deg,var(--red-soft),rgba(255,255,255,.72)); }
-    .pin-ordner i { background:var(--red); }
+    .pin-ordner {
+      background:var(--red);
+    }
 
-    .pin-online { color:var(--blue); background:linear-gradient(90deg,var(--blue-soft),rgba(255,255,255,.72)); }
-    .pin-online i { background:var(--blue); }
+    .pin-online {
+      background:var(--blue);
+    }
 
-    .pin-kanton { color:var(--black); background:linear-gradient(90deg,var(--black-soft),rgba(255,255,255,.72)); }
-    .pin-kanton i { background:var(--black); }
+    .pin-kanton {
+      background:var(--black);
+    }
 
-    .pin-beratung { color:var(--purple); background:linear-gradient(90deg,var(--purple-soft),rgba(255,255,255,.72)); }
-    .pin-beratung i { background:var(--purple); }
+    .pin-beratung {
+      background:var(--purple);
+    }
 
-    .timeline { display:grid; gap:12px; margin-top:8px; }
+    .timeline {
+      display:grid;
+      gap:12px;
+      margin-top:8px;
+    }
+
     .time-item {
-      display:grid; grid-template-columns:150px 1fr; gap:18px; padding:18px; border-radius:var(--radius-md);
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:18px;
+      padding:18px;
+      border-radius:var(--radius-md);
     }
+
     .time {
-      align-self:start; display:inline-flex; width:fit-content; padding:7px 9px 6px;
-      border-radius:10px; color:white; background:var(--section-accent);
-      font-family:Arial, Helvetica, sans-serif; font-size:.72rem; font-weight:800;
-      letter-spacing:.07em; text-transform:uppercase; line-height:1.15;
+      align-self:start;
+      display:inline-flex;
+      width:fit-content;
+      padding:7px 9px 6px;
+      border-radius:10px;
+      color:white;
+      background:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      line-height:1.15;
     }
 
     .checklist {
-      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;
-      margin:16px 0 0; padding:0; list-style:none;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin:16px 0 0;
+      padding:0;
+      list-style:none;
     }
+
     .checklist li {
-      position:relative; min-height:58px; padding:13px 14px 13px 42px; border-radius:15px;
+      position:relative;
+      min-height:58px;
+      padding:13px 14px 13px 42px;
+      border-radius:15px;
     }
+
     .checklist li::before {
-      content:"✓"; position:absolute; left:15px; top:13px; color:var(--section-accent);
-      font-family:Arial, Helvetica, sans-serif; font-weight:900;
+      content:"✓";
+      position:absolute;
+      left:15px;
+      top:13px;
+      color:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:900;
     }
 
-    .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-    .tag { padding:6px 10px; border-radius:999px; font-family:Arial, Helvetica, sans-serif; font-size:.8rem; }
+    .tag-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
 
-    .sources ul { margin:12px 0 0; padding-left:1.1rem; }
+    .tag {
+      padding:6px 10px;
+      border-radius:999px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.8rem;
+    }
+
+    .sources ul {
+      margin:12px 0 0;
+      padding-left:1.1rem;
+    }
+
     .sources li {
-      margin-bottom:8px; color:var(--muted);
-      font-family:Arial, Helvetica, sans-serif; font-size:.82rem; line-height:1.45;
+      margin-bottom:8px;
+      color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.82rem;
+      line-height:1.45;
     }
 
     footer {
-      margin-top:20px; padding:0 4px; color:var(--muted);
-      font-family:Arial, Helvetica, sans-serif; font-size:.8rem; line-height:1.45;
+      margin-top:20px;
+      padding:0 4px;
+      color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.8rem;
+      line-height:1.45;
     }
 
     @media (max-width:900px) {
-      .micro-row, .checklist { grid-template-columns:1fr; }
+      .micro-row,
+      .checklist {
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:700px) {
-      body { font-size:17px; }
-      .page { padding:18px 12px 42px; }
-      header, section { padding:22px 18px; }
-      .split, .grid { grid-template-columns:1fr; }
-      .time-item { grid-template-columns:1fr; gap:8px; }
-      .section-head { display:block; }
-      .section-label { display:inline-block; margin-top:12px; }
-      nav a { font-size:.86rem; }
-      .pin { font-size:.62rem; }
+      body {
+        font-size:17px;
+      }
+
+      .page {
+        padding:18px 12px 42px;
+      }
+
+      header,
+      section {
+        padding:22px 18px;
+      }
+
+      .split,
+      .grid {
+        grid-template-columns:1fr;
+      }
+
+      .time-item {
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .section-head {
+        display:block;
+      }
+
+      .section-label {
+        display:inline-block;
+        margin-top:12px;
+      }
+
+      nav a {
+        font-size:.86rem;
+      }
+
+      .pin {
+        width:32px;
+        height:32px;
+      }
+
+      .pin svg {
+        width:20px;
+        height:20px;
+      }
     }
 
     @media print {
-      body { background:#fff8f3; }
-      .page { padding:0; }
-      .wrap { max-width:none; }
-      nav { display:none; }
-      header, section { break-inside:avoid; box-shadow:none; }
+      body {
+        background:#fff8f3;
+      }
+
+      .page {
+        padding:0;
+      }
+
+      .wrap {
+        max-width:none;
+      }
+
+      nav {
+        display:none;
+      }
+
+      header,
+      section {
+        break-inside:avoid;
+        box-shadow:none;
+      }
     }
   </style>
 </head>
@@ -274,7 +569,9 @@
 
       <header>
         <span class="kicker">Digitale Vertiefung</span>
+
         <h1>Einschulung: Wenn Schule offiziell wird</h1>
+
         <p class="subtitle">
           Diese Seite gehört zur Buchseite über Kindergarten, Schuleintritt und die ersten offiziellen Schulschritte.
           Sie hilft dir, die wichtigsten Punkte zu prüfen, ohne dich im Behördennebel zu verlaufen.
@@ -308,8 +605,24 @@
               </p>
 
               <div class="pin-row" aria-label="Zeichen im Buch">
-                <span class="pin pin-kanton"><i>KT</i><span>kantonal unterschiedlich</span></span>
-                <span class="pin pin-beratung"><i>BE</i><span>Beratung möglich</span></span>
+                <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                    <path d="M8.5 10l1.5 2"></path>
+                    <path d="M15.5 11l1.4 2"></path>
+                  </svg>
+                </span>
+
+                <span class="pin pin-beratung" title="Lass dich beraten" aria-label="Lass dich beraten">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 19v-1.2c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3V19"></path>
+                    <path d="M12 12.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8z"></path>
+                    <path d="M5 18v-1c0-1.3 1.1-2.4 2.6-2.8"></path>
+                    <path d="M19 18v-1c0-1.3-1.1-2.4-2.6-2.8"></path>
+                    <path d="M12 4.5c1.3 0 2.3.8 2.3 2 0 1.6-2.3 1.7-2.3 3"></path>
+                    <path d="M12 11.3h.01"></path>
+                  </svg>
+                </span>
               </div>
 
               <p>
@@ -322,10 +635,12 @@
                   <b>Kanton</b>
                   Stichtage und Schulpflicht werden kantonal geregelt.
                 </div>
+
                 <div class="micro-card">
                   <b>Gemeinde</b>
                   Anmeldung, Zuteilung und Betreuung laufen oft lokal.
                 </div>
+
                 <div class="micro-card">
                   <b>Familie</b>
                   Alltag, Schulweg und Betreuung müssen praktisch funktionieren.
@@ -357,13 +672,22 @@
           </div>
 
           <div class="timeline">
+
             <div class="time-item">
               <div class="time">Vor der Anmeldung</div>
               <div>
                 <h3>Adresse und Kontakt prüfen</h3>
-                <div class="pin-row">
-                  <span class="pin pin-kanton"><i>KT</i><span>Gemeinde prüfen</span></span>
+
+                <div class="pin-row" aria-label="Zeichen im Buch">
+                  <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                      <path d="M8.5 10l1.5 2"></path>
+                      <path d="M15.5 11l1.4 2"></path>
+                    </svg>
+                  </span>
                 </div>
+
                 <p>
                   Die Schulverwaltung arbeitet mit offiziellen Meldedaten.
                   Wenn Adresse, Telefonnummer oder E-Mail nicht stimmen, kommen wichtige Informationen zu spät oder gar nicht an.
@@ -375,10 +699,27 @@
               <div class="time">Wenn Post kommt</div>
               <div>
                 <h3>Anmeldeformular lesen</h3>
-                <div class="pin-row">
-                  <span class="pin pin-ordner"><i>LO</i><span>ablegen</span></span>
-                  <span class="pin pin-online"><i>ON</i><span>Formular möglich</span></span>
+
+                <div class="pin-row" aria-label="Zeichen im Buch">
+                  <span class="pin pin-ordner" title="Lebensordner" aria-label="Lebensordner">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 7.5h6l1.8 2H21v9.5H3z"></path>
+                      <path d="M3 7.5v-2h5.5l1.5 2"></path>
+                    </svg>
+                  </span>
+
+                  <span class="pin pin-online" title="Online möglich" aria-label="Online möglich">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 18h14"></path>
+                      <path d="M7 15h10V6H7z"></path>
+                      <path d="M10 21h4"></path>
+                      <path d="M12 18v3"></path>
+                      <path d="M9.5 9.5h5"></path>
+                      <path d="M9.5 12h5"></path>
+                    </svg>
+                  </span>
                 </div>
+
                 <p>
                   Die Eltern erhalten von Gemeinde oder Schule die Anmeldung für Kindergarten oder Schule.
                   Lies das Schreiben ganz. Entscheidend sind Frist, Unterschriften, Beilagen und Rückfragen.
@@ -396,10 +737,27 @@
               <div class="time">Vor dem Start</div>
               <div>
                 <h3>Zuteilung und offene Fragen klären</h3>
-                <div class="pin-row">
-                  <span class="pin pin-ordner"><i>LO</i><span>Zuteilung sichern</span></span>
-                  <span class="pin pin-beratung"><i>BE</i><span>nachfragen</span></span>
+
+                <div class="pin-row" aria-label="Zeichen im Buch">
+                  <span class="pin pin-ordner" title="Lebensordner" aria-label="Lebensordner">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 7.5h6l1.8 2H21v9.5H3z"></path>
+                      <path d="M3 7.5v-2h5.5l1.5 2"></path>
+                    </svg>
+                  </span>
+
+                  <span class="pin pin-beratung" title="Lass dich beraten" aria-label="Lass dich beraten">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8 19v-1.2c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3V19"></path>
+                      <path d="M12 12.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8z"></path>
+                      <path d="M5 18v-1c0-1.3 1.1-2.4 2.6-2.8"></path>
+                      <path d="M19 18v-1c0-1.3-1.1-2.4-2.6-2.8"></path>
+                      <path d="M12 4.5c1.3 0 2.3.8 2.3 2 0 1.6-2.3 1.7-2.3 3"></path>
+                      <path d="M12 11.3h.01"></path>
+                    </svg>
+                  </span>
                 </div>
+
                 <p>
                   Irgendwann kommt die Zuteilung zu Kindergarten, Schule oder Klasse.
                   Jetzt solltest du prüfen: Ist der Schulweg klar? Gibt es Betreuung? Muss die Schule etwas Wichtiges wissen?
@@ -411,10 +769,28 @@
               <div class="time">Rechtzeitig</div>
               <div>
                 <h3>Betreuung separat anmelden</h3>
-                <div class="pin-row">
-                  <span class="pin pin-online"><i>ON</i><span>Anmeldung möglich</span></span>
-                  <span class="pin pin-kanton"><i>KT</i><span>lokale Frist</span></span>
+
+                <div class="pin-row" aria-label="Zeichen im Buch">
+                  <span class="pin pin-online" title="Online möglich" aria-label="Online möglich">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 18h14"></path>
+                      <path d="M7 15h10V6H7z"></path>
+                      <path d="M10 21h4"></path>
+                      <path d="M12 18v3"></path>
+                      <path d="M9.5 9.5h5"></path>
+                      <path d="M9.5 12h5"></path>
+                    </svg>
+                  </span>
+
+                  <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                      <path d="M8.5 10l1.5 2"></path>
+                      <path d="M15.5 11l1.4 2"></path>
+                    </svg>
+                  </span>
                 </div>
+
                 <p>
                   Unterricht und Betreuung sind zwei verschiedene Dinge.
                   Mittagstisch, Hort, Morgenbetreuung oder Nachmittagsbetreuung müssen oft separat angemeldet werden.
@@ -432,15 +808,23 @@
               <div class="time">Schuljahresbeginn</div>
               <div>
                 <h3>Start organisieren</h3>
-                <div class="pin-row">
-                  <span class="pin pin-ordner"><i>LO</i><span>alles auffindbar</span></span>
+
+                <div class="pin-row" aria-label="Zeichen im Buch">
+                  <span class="pin pin-ordner" title="Lebensordner" aria-label="Lebensordner">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M3 7.5h6l1.8 2H21v9.5H3z"></path>
+                      <path d="M3 7.5v-2h5.5l1.5 2"></path>
+                    </svg>
+                  </span>
                 </div>
+
                 <p>
                   Stundenplan, Schulweg, Betreuung, Kontaktpersonen und Notfallnummern sollten jetzt nicht mehr lose herumfliegen.
                   Lege alles an einem Ort ab.
                 </p>
               </div>
             </div>
+
           </div>
         </section>
 
@@ -450,9 +834,25 @@
             <span class="section-label">Abklären</span>
           </div>
 
-          <div class="pin-row">
-            <span class="pin pin-beratung"><i>BE</i><span>Fachstelle</span></span>
-            <span class="pin pin-kanton"><i>KT</i><span>Einzelfall</span></span>
+          <div class="pin-row" aria-label="Zeichen im Buch">
+            <span class="pin pin-beratung" title="Lass dich beraten" aria-label="Lass dich beraten">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 19v-1.2c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3V19"></path>
+                <path d="M12 12.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8z"></path>
+                <path d="M5 18v-1c0-1.3 1.1-2.4 2.6-2.8"></path>
+                <path d="M19 18v-1c0-1.3-1.1-2.4-2.6-2.8"></path>
+                <path d="M12 4.5c1.3 0 2.3.8 2.3 2 0 1.6-2.3 1.7-2.3 3"></path>
+                <path d="M12 11.3h.01"></path>
+              </svg>
+            </span>
+
+            <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                <path d="M8.5 10l1.5 2"></path>
+                <path d="M15.5 11l1.4 2"></path>
+              </svg>
+            </span>
           </div>
 
           <p>
@@ -500,10 +900,36 @@
             <span class="section-label">Alltag</span>
           </div>
 
-          <div class="pin-row">
-            <span class="pin pin-online"><i>ON</i><span>online möglich</span></span>
-            <span class="pin pin-kanton"><i>KT</i><span>kommunal geregelt</span></span>
-            <span class="pin pin-beratung"><i>BE</i><span>bei Unsicherheit</span></span>
+          <div class="pin-row" aria-label="Zeichen im Buch">
+            <span class="pin pin-online" title="Online möglich" aria-label="Online möglich">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 18h14"></path>
+                <path d="M7 15h10V6H7z"></path>
+                <path d="M10 21h4"></path>
+                <path d="M12 18v3"></path>
+                <path d="M9.5 9.5h5"></path>
+                <path d="M9.5 12h5"></path>
+              </svg>
+            </span>
+
+            <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                <path d="M8.5 10l1.5 2"></path>
+                <path d="M15.5 11l1.4 2"></path>
+              </svg>
+            </span>
+
+            <span class="pin pin-beratung" title="Lass dich beraten" aria-label="Lass dich beraten">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 19v-1.2c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3V19"></path>
+                <path d="M12 12.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8z"></path>
+                <path d="M5 18v-1c0-1.3 1.1-2.4 2.6-2.8"></path>
+                <path d="M19 18v-1c0-1.3-1.1-2.4-2.6-2.8"></path>
+                <path d="M12 4.5c1.3 0 2.3.8 2.3 2 0 1.6-2.3 1.7-2.3 3"></path>
+                <path d="M12 11.3h.01"></path>
+              </svg>
+            </span>
           </div>
 
           <p>
@@ -534,10 +960,12 @@
               <b>Zeit</b>
               Vor Unterricht, Mittag, Nachmittag und Ferien getrennt prüfen.
             </div>
+
             <div class="micro-card">
               <b>Kosten</b>
               Tarife können einkommensabhängig sein.
             </div>
+
             <div class="micro-card">
               <b>Frist</b>
               Anmeldung früh erledigen, nicht erst zum Schulstart.
@@ -556,8 +984,13 @@
             <span class="section-label">Ablage</span>
           </div>
 
-          <div class="pin-row">
-            <span class="pin pin-ordner"><i>LO</i><span>aufbewahren</span></span>
+          <div class="pin-row" aria-label="Zeichen im Buch">
+            <span class="pin pin-ordner" title="Lebensordner" aria-label="Lebensordner">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 7.5h6l1.8 2H21v9.5H3z"></path>
+                <path d="M3 7.5v-2h5.5l1.5 2"></path>
+              </svg>
+            </span>
           </div>
 
           <p>
@@ -583,9 +1016,24 @@
             <span class="section-label">Prüfen</span>
           </div>
 
-          <div class="pin-row">
-            <span class="pin pin-ordner"><i>LO</i><span>Kopie sichern</span></span>
-            <span class="pin pin-beratung"><i>BE</i><span>bei Zweifel</span></span>
+          <div class="pin-row" aria-label="Zeichen im Buch">
+            <span class="pin pin-ordner" title="Lebensordner" aria-label="Lebensordner">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 7.5h6l1.8 2H21v9.5H3z"></path>
+                <path d="M3 7.5v-2h5.5l1.5 2"></path>
+              </svg>
+            </span>
+
+            <span class="pin pin-beratung" title="Lass dich beraten" aria-label="Lass dich beraten">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 19v-1.2c0-1.8 1.8-3.3 4-3.3s4 1.5 4 3.3V19"></path>
+                <path d="M12 12.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8z"></path>
+                <path d="M5 18v-1c0-1.3 1.1-2.4 2.6-2.8"></path>
+                <path d="M19 18v-1c0-1.3-1.1-2.4-2.6-2.8"></path>
+                <path d="M12 4.5c1.3 0 2.3.8 2.3 2 0 1.6-2.3 1.7-2.3 3"></path>
+                <path d="M12 11.3h.01"></path>
+              </svg>
+            </span>
           </div>
 
           <ul class="checklist">
@@ -614,9 +1062,25 @@
             <span class="section-label">Stand prüfen</span>
           </div>
 
-          <div class="pin-row">
-            <span class="pin pin-kanton"><i>KT</i><span>Regel prüfen</span></span>
-            <span class="pin pin-online"><i>ON</i><span>Links</span></span>
+          <div class="pin-row" aria-label="Zeichen im Buch">
+            <span class="pin pin-kanton" title="Kantonal unterschiedlich" aria-label="Kantonal unterschiedlich">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 18l5.5-8 4 5.2 3-4.2L21 18"></path>
+                <path d="M8.5 10l1.5 2"></path>
+                <path d="M15.5 11l1.4 2"></path>
+              </svg>
+            </span>
+
+            <span class="pin pin-online" title="Online möglich" aria-label="Online möglich">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 18h14"></path>
+                <path d="M7 15h10V6H7z"></path>
+                <path d="M10 21h4"></path>
+                <path d="M12 18v3"></path>
+                <path d="M9.5 9.5h5"></path>
+                <path d="M9.5 12h5"></path>
+              </svg>
+            </span>
           </div>
 
           <p>
@@ -625,27 +1089,36 @@
           </p>
 
           <ul>
-            <li>ch.ch:
+            <li>
+              ch.ch:
               <a href="https://www.ch.ch/de/schule-und-bildung/obligatorische-schule/schule-und-kindergarten/" target="_blank" rel="noopener">
                 Kindergarten und Schulpflicht in der Schweiz
               </a>
             </li>
-            <li>Kanton Zürich:
+
+            <li>
+              Kanton Zürich:
               <a href="https://www.zh.ch/de/bildung/schulen/volksschule/kindergarten.html" target="_blank" rel="noopener">
                 Kindergarten
               </a>
             </li>
-            <li>Stadt Winterthur:
+
+            <li>
+              Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten" target="_blank" rel="noopener">
                 Kindergarteneintritt
               </a>
             </li>
-            <li>Stadt Winterthur:
+
+            <li>
+              Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulerganzende-betreuung/kosten-und-anmeldung" target="_blank" rel="noopener">
                 schulergänzende Betreuung, Kosten und Anmeldung
               </a>
             </li>
-            <li>Stadt Winterthur:
+
+            <li>
+              Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten/rueckstellung-von-der-schulpflicht-1" target="_blank" rel="noopener">
                 Rückstellung von der Schulpflicht
               </a>
