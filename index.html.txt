@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vertiefung Einschulung | ganz normales Alltagswissen</title>
+
+  <style>
+    :root {
+      --paper: #fff7ef;
+      --ink: #211914;
+      --muted: #6f6158;
+      --line: rgba(33, 25, 20, 0.18);
+      --soft: rgba(255, 255, 255, 0.58);
+      --box: rgba(255, 255, 255, 0.72);
+      --accent: #b14c75;
+      --accent-soft: rgba(177, 76, 117, 0.13);
+      --warning: #2f2723;
+      --shadow: 0 18px 45px rgba(42, 30, 24, 0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(177, 76, 117, 0.16), transparent 32rem),
+        linear-gradient(180deg, #fffaf4 0%, var(--paper) 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    .page {
+      min-height: 100vh;
+      width: 100%;
+      padding: 32px 18px 56px;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 34px 30px 28px;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      background: rgba(255, 255, 255, 0.62);
+      box-shadow: var(--shadow);
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 12px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.77rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.1rem, 5vw, 4.4rem);
+      line-height: 0.96;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    nav {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      border-color: rgba(177, 76, 117, 0.5);
+      background: rgba(177, 76, 117, 0.08);
+    }
+
+    main {
+      margin-top: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--box);
+      box-shadow: 0 8px 28px rgba(42, 30, 24, 0.07);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0 0 13px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .note {
+      padding: 18px 20px;
+      border-left: 5px solid var(--accent);
+      border-radius: 16px;
+      background: var(--accent-soft);
+    }
+
+    .mini {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .time-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px;
+      padding: 15px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .time-item:first-child {
+      border-top: 0;
+    }
+
+    .time {
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding: 12px 14px 12px 42px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.52);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 15px;
+      top: 11px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .sources a {
+      color: var(--ink);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      margin-top: 22px;
+      padding: 18px 4px 0;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 18px 12px 42px;
+      }
+
+      header,
+      section {
+        padding: 22px 18px;
+      }
+
+      .grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .time-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff7ef;
+      }
+
+      .page {
+        padding: 0;
+      }
+
+      .wrap {
+        max-width: none;
+      }
+
+      header,
+      section {
+        break-inside: avoid;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      nav {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="wrap">
+
+      <header>
+        <span class="kicker">Digitale Vertiefung</span>
+        <h1>Einschulung: Wenn Schule offiziell wird</h1>
+        <p class="subtitle">
+          Diese Seite gehört zur Buchseite über Kindergarten, Schuleintritt und die ersten offiziellen Schulschritte.
+          Sie hilft dir, die wichtigsten Punkte zu prüfen, ohne dich im Behördennebel zu verlaufen.
+        </p>
+
+        <nav aria-label="Seitennavigation">
+          <a href="#kurz">Kurz gesagt</a>
+          <a href="#zeitplan">Zeitplan</a>
+          <a href="#rueckstellung">Rückstellung</a>
+          <a href="#betreuung">Betreuung</a>
+          <a href="#unterlagen">Unterlagen</a>
+          <a href="#quellen">Quellen</a>
+        </nav>
+      </header>
+
+      <main>
+
+        <section id="kurz">
+          <h2>Kurz gesagt</h2>
+
+          <div class="split">
+            <div>
+              <p>
+                Einschulung ist nicht nur ein emotionaler Schritt. Sie ist auch ein Verwaltungsakt:
+                Das Kind wird einer Schule zugeteilt, die Eltern erhalten Schreiben, Fristen und Formulare,
+                und plötzlich sind Schulverwaltung, Schulleitung, Betreuung und manchmal auch Fachstellen beteiligt.
+              </p>
+
+              <p>
+                In der Schweiz ist die Schule kantonal geregelt. Viele Details hängen zusätzlich von der Gemeinde ab.
+                Prüfe deshalb immer die Informationen deines Wohnkantons und deiner Gemeinde.
+              </p>
+            </div>
+
+            <aside class="note">
+              <h3>Für Zürich / Winterthur als Beispiel</h3>
+              <p>
+                Im Kanton Zürich ist der Kindergarten die erste Stufe der Volksschule, dauert zwei Jahre und ist obligatorisch.
+                Kinder, die am 31. Juli vier Jahre alt sind, starten ab Schuljahresbeginn im August.
+              </p>
+              <p class="mini">
+                Winterthur verschickt das Anmeldeformular in der Regel im Januar an die Eltern schulpflichtiger Kinder.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section id="zeitplan">
+          <h2>Was ungefähr wann passiert</h2>
+
+          <div class="timeline">
+            <div class="time-item">
+              <div class="time">Vor dem Januar</div>
+              <div>
+                <h3>Adresse, Meldeverhältnis und Kontakt prüfen</h3>
+                <p>
+                  Die Schulverwaltung arbeitet mit den Daten aus der Einwohnerkontrolle.
+                  Wenn die Adresse nicht stimmt, kommt Post zu spät oder gar nicht an.
+                </p>
+              </div>
+            </div>
+
+            <div class="time-item">
+              <div class="time">Januar</div>
+              <div>
+                <h3>Anmeldeformular kommt</h3>
+                <p>
+                  Die Eltern erhalten die Anmeldung für den Kindergarten oder den nächsten offiziellen Schritt.
+                  Lies das Schreiben ganz. Dort steht, bis wann du antworten musst.
+                </p>
+              </div>
+            </div>
+
+            <div class="time-item">
+              <div class="time">Frühling</div>
+              <div>
+                <h3>Zuteilung, Fragen, Besonderheiten</h3>
+                <p>
+                  Jetzt werden meist Schule, Kindergarten oder Klasse vorbereitet.
+                  Falls es besondere Themen gibt, ist dies der Moment für Kontakt mit Schulverwaltung oder Schulleitung.
+                </p>
+              </div>
+            </div>
+
+            <div class="time-item">
+              <div class="time">Bis 30. Juni</div>
+              <div>
+                <h3>Betreuung ab August anmelden</h3>
+                <p>
+                  In Winterthur gilt für schulergänzende Betreuung ab August die Anmeldefrist 30. Juni.
+                  Andere Gemeinden können andere Fristen haben.
+                </p>
+              </div>
+            </div>
+
+            <div class="time-item">
+              <div class="time">August</div>
+              <div>
+                <h3>Start ins Schuljahr</h3>
+                <p>
+                  Das Kind startet in Kindergarten oder Schule. Stundenplan, Schulweg, Betreuung und Zuständigkeiten
+                  sollten jetzt geklärt sein.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="rueckstellung">
+          <h2>Wenn der Start noch nicht passt</h2>
+
+          <p>
+            Manchmal wirkt ein Kind noch nicht bereit für den Kindergartenstart. Das kann Eltern verunsichern.
+            Wichtig ist: Nicht einfach abwarten. Früh mit der zuständigen Stelle sprechen.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Rückstellung</h3>
+              <p>
+                Eine Rückstellung bedeutet: Das Kind startet später. Das ist nicht einfach eine private Entscheidung,
+                sondern braucht in der Regel ein begründetes Gesuch.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Begründung</h3>
+              <p>
+                Häufig geht es um Entwicklungsverzögerungen oder besondere Belastungen.
+                Je nach Gemeinde braucht es Beilagen, Berichte oder eine Einschätzung von Fachpersonen.
+              </p>
+            </div>
+          </div>
+
+          <ul class="checklist">
+            <li>Früh bei Schulverwaltung oder Schulleitung nachfragen.</li>
+            <li>Schreiben der Gemeinde genau lesen.</li>
+            <li>Begründung sachlich formulieren.</li>
+            <li>Vorhandene Berichte oder Einschätzungen bereitlegen.</li>
+            <li>Fristen nicht verstreichen lassen.</li>
+          </ul>
+        </section>
+
+        <section id="betreuung">
+          <h2>Betreuung ist ein eigener Schritt</h2>
+
+          <p>
+            Kindergarten oder Schule bedeuten nicht automatisch, dass Morgenbetreuung, Mittagstisch, Hort oder
+            Nachmittagsbetreuung organisiert sind. Diese Angebote müssen meist separat angemeldet werden.
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Mögliche Angebote</h3>
+              <p>
+                Je nach Gemeinde gibt es Betreuung vor dem Unterricht, über Mittag, nachmittags oder während Ferien.
+                Die Namen unterscheiden sich: Hort, Tagesstruktur, Mittagstisch, schulergänzende Betreuung.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Kosten</h3>
+              <p>
+                Unterricht ist Teil der obligatorischen Schule. Betreuung ist etwas anderes.
+                Die Kosten sind je nach Gemeinde, Einkommen und gebuchtem Umfang unterschiedlich.
+              </p>
+            </div>
+          </div>
+
+          <p class="note">
+            Prüfe Betreuung nicht erst am ersten Schultag. Wenn du arbeitest, Termine hast oder Unterstützung brauchst,
+            kann genau dieser Punkt den Familienalltag retten.
+          </p>
+        </section>
+
+        <section id="unterlagen">
+          <h2>Das gehört in den Lebensordner</h2>
+
+          <p>
+            Lege für Schule und Betreuung einen einfachen Ordner oder digitalen Ablageort an.
+            Nicht schön. Auffindbar reicht.
+          </p>
+
+          <ul class="checklist">
+            <li>Anmeldeformular oder Kopie der Anmeldung</li>
+            <li>Zuteilung zu Kindergarten, Schule oder Klasse</li>
+            <li>Stundenplan und Ferienplan</li>
+            <li>Kontaktdaten von Schulverwaltung, Schulleitung und Lehrperson</li>
+            <li>Betreuungsvertrag oder Bestätigung der schulergänzenden Betreuung</li>
+            <li>Tarifentscheid, Beitragsentscheid oder Rechnung zur Betreuung</li>
+            <li>Gesuche, Entscheide und Berichte bei Rückstellung oder Unterstützung</li>
+            <li>Wichtige Mails und Briefe der Schule</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Welche Zeichen aus dem Buch hier passen</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Lebensordner</h3>
+              <p>
+                Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Online möglich</h3>
+              <p>
+                Viele Gemeinden bieten Formulare, Anmeldung, Betreuung oder Beitragsrechner online an.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Kantonal unterschiedlich</h3>
+              <p>
+                Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Lass dich beraten</h3>
+              <p>
+                Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit oder schulpsychologische Dienste.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Mini-Check vor dem Absenden</h2>
+
+          <ul class="checklist">
+            <li>Ist das Formular vollständig ausgefüllt?</li>
+            <li>Stimmen Adresse, Telefonnummer und E-Mail-Adresse?</li>
+            <li>Sind beide erziehungsberechtigten Personen korrekt erfasst, falls nötig?</li>
+            <li>Hast du Betreuung separat geprüft?</li>
+            <li>Gibt es gesundheitliche, sprachliche oder familiäre Besonderheiten, die die Schule wissen muss?</li>
+            <li>Hast du eine Kopie oder ein Foto der Anmeldung gespeichert?</li>
+          </ul>
+
+          <div class="tag-list" aria-label="Stichworte">
+            <span class="tag">Kindergarten</span>
+            <span class="tag">Schuleintritt</span>
+            <span class="tag">Anmeldung</span>
+            <span class="tag">Rückstellung</span>
+            <span class="tag">Betreuung</span>
+            <span class="tag">Lebensordner</span>
+          </div>
+        </section>
+
+        <section id="quellen" class="sources">
+          <h2>Quellen und Nachprüfen</h2>
+
+          <p>
+            Regeln, Fristen und Links können sich ändern. Prüfe bei deiner Gemeinde und deinem Kanton,
+            bevor du ein Gesuch stellst oder eine Frist als sicher annimmst.
+          </p>
+
+          <ul>
+            <li>
+              <a href="https://www.ch.ch/de/schule-und-bildung/obligatorische-schule/schule-und-kindergarten/" target="_blank" rel="noopener">
+                ch.ch: Kindergarten und Schulpflicht in der Schweiz
+              </a>
+            </li>
+            <li>
+              <a href="https://www.zh.ch/de/bildung/schulen/volksschule/kindergarten.html" target="_blank" rel="noopener">
+                Kanton Zürich: Kindergarten
+              </a>
+            </li>
+            <li>
+              <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten" target="_blank" rel="noopener">
+                Stadt Winterthur: Kindergarteneintritt / Einschulung
+              </a>
+            </li>
+            <li>
+              <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulerganzende-betreuung/kosten-und-anmeldung" target="_blank" rel="noopener">
+                Stadt Winterthur: Kosten, Anmeldung, Fristen der schulergänzenden Betreuung
+              </a>
+            </li>
+            <li>
+              <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten/rueckstellung-von-der-schulpflicht-1" target="_blank" rel="noopener">
+                Stadt Winterthur: Rückstellung von der Schulpflicht
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </main>
+
+      <footer>
+        Digitale Zusatzseite zur Reihe ganz normales Alltagswissen.
+        Stand der inhaltlichen Prüfung: Juli 2026.
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
