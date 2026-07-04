@@ -9,14 +9,20 @@
     :root {
       --ink:#241c18; --muted:#665852; --paper:#fff8f1; --paper-2:#f5ece3;
       --line:rgba(36,28,24,.16); --shadow:0 18px 44px rgba(42,30,24,.11);
+
       --magenta:#b14c75; --magenta-dark:#873453;
+      --red:#b80f24; --red-soft:#ffe8eb;
+      --blue:#1f7897; --blue-soft:#e4f5fb;
+      --black:#29292d; --black-soft:#eeeeee;
+      --purple:#68148d; --purple-soft:#f2e3fa;
+
       --rose-bg:#ffe8f1; --rose-mid:#fff7fa; --rose-accent:#b14c75;
       --sand-bg:#fff0d2; --sand-mid:#fff9ee; --sand-accent:#b87428;
       --violet-bg:#eee5ff; --violet-mid:#fbf8ff; --violet-accent:#68529d;
       --sage-bg:#e5f5eb; --sage-mid:#f7fff9; --sage-accent:#3f8a62;
       --peach-bg:#ffe9dc; --peach-mid:#fff8f4; --peach-accent:#bf6644;
-      --blue-bg:#e4f1ff; --blue-mid:#f7fbff; --blue-accent:#3974a8;
       --mist-bg:#eeeeea; --mist-mid:#fbfbf8; --mist-accent:#756e5f;
+
       --radius-xl:30px; --radius-lg:22px; --radius-md:16px; --radius-sm:12px;
     }
 
@@ -37,8 +43,10 @@
     .wrap { max-width:1060px; margin:0 auto; }
 
     header {
-      padding:34px 32px 30px; border:1px solid var(--line); border-radius:var(--radius-xl);
-      background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(255,232,241,.72));
+      padding:34px 32px 30px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,232,241,.72));
       box-shadow:var(--shadow);
     }
 
@@ -71,26 +79,6 @@
       background:rgba(255,255,255,.72); text-decoration:none; font-size:.9rem;
     }
 
-    .quick-tiles {
-      display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:26px;
-    }
-
-    .mini-tile {
-      display:block; min-height:112px; padding:14px 14px 13px;
-      border:1px solid rgba(36,28,24,.14); border-radius:var(--radius-md);
-      color:var(--ink); text-decoration:none; box-shadow:0 9px 20px rgba(42,30,24,.07);
-    }
-
-    .mini-tile span, .mini-tile small { display:block; font-family:Arial, Helvetica, sans-serif; }
-    .mini-tile span { margin-bottom:10px; font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; opacity:.82; }
-    .mini-tile strong { display:block; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:1rem; line-height:1.2; }
-    .mini-tile small { color:var(--muted); font-size:.8rem; line-height:1.35; }
-
-    .tile-rose { background:linear-gradient(145deg,var(--rose-bg),#fff7fa); border-color:rgba(177,76,117,.30); }
-    .tile-sand { background:linear-gradient(145deg,var(--sand-bg),#fff8ea); border-color:rgba(184,116,40,.30); }
-    .tile-sage { background:linear-gradient(145deg,var(--sage-bg),#f6fff9); border-color:rgba(63,138,98,.30); }
-    .tile-violet { background:linear-gradient(145deg,var(--violet-bg),#faf7ff); border-color:rgba(104,82,157,.30); }
-
     main { display:grid; gap:22px; margin-top:24px; }
 
     section {
@@ -111,7 +99,6 @@
     .sec-rueck { --section-bg:var(--violet-bg); --section-mid:var(--violet-mid); --section-accent:var(--violet-accent); }
     .sec-betreuung { --section-bg:var(--sage-bg); --section-mid:var(--sage-mid); --section-accent:var(--sage-accent); }
     .sec-ordner { --section-bg:var(--peach-bg); --section-mid:var(--peach-mid); --section-accent:var(--peach-accent); }
-    .sec-zeichen { --section-bg:var(--blue-bg); --section-mid:var(--blue-mid); --section-accent:var(--blue-accent); }
     .sec-check { --section-bg:var(--mist-bg); --section-mid:var(--mist-mid); --section-accent:var(--mist-accent); }
     .sec-quellen { --section-bg:#fff0f6; --section-mid:#fff9fb; --section-accent:var(--magenta); }
 
@@ -136,7 +123,7 @@
     .split { display:grid; grid-template-columns:1.08fr .92fr; gap:18px; align-items:start; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
 
-    .card, .quote-box, .micro-card, .time-item, .checklist li, .zeichen-card, .tag {
+    .card, .quote-box, .micro-card, .time-item, .checklist li, .tag {
       background:rgba(255,255,255,.68);
       border:1px solid rgba(36,28,24,.13);
       box-shadow:0 7px 18px rgba(42,30,24,.045);
@@ -163,6 +150,61 @@
     }
     .praxisnotiz strong { color:var(--section-accent); font-weight:800; }
 
+    .pin-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin:8px 0 12px;
+      align-items:center;
+    }
+
+    .pin {
+      display:inline-grid;
+      grid-template-columns:22px auto;
+      align-items:center;
+      min-height:28px;
+      max-width:max-content;
+      border-radius:999px;
+      border:1px solid rgba(36,28,24,.14);
+      background:rgba(255,255,255,.72);
+      overflow:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:.68rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      line-height:1;
+      box-shadow:0 5px 12px rgba(42,30,24,.055);
+    }
+
+    .pin i {
+      display:grid;
+      place-items:center;
+      height:100%;
+      min-height:28px;
+      color:white;
+      font-style:normal;
+      font-size:.64rem;
+      letter-spacing:.03em;
+    }
+
+    .pin span {
+      padding:0 8px 0 7px;
+      white-space:nowrap;
+    }
+
+    .pin-ordner { color:var(--red); background:linear-gradient(90deg,var(--red-soft),rgba(255,255,255,.72)); }
+    .pin-ordner i { background:var(--red); }
+
+    .pin-online { color:var(--blue); background:linear-gradient(90deg,var(--blue-soft),rgba(255,255,255,.72)); }
+    .pin-online i { background:var(--blue); }
+
+    .pin-kanton { color:var(--black); background:linear-gradient(90deg,var(--black-soft),rgba(255,255,255,.72)); }
+    .pin-kanton i { background:var(--black); }
+
+    .pin-beratung { color:var(--purple); background:linear-gradient(90deg,var(--purple-soft),rgba(255,255,255,.72)); }
+    .pin-beratung i { background:var(--purple); }
+
     .timeline { display:grid; gap:12px; margin-top:8px; }
     .time-item {
       display:grid; grid-template-columns:150px 1fr; gap:18px; padding:18px; border-radius:var(--radius-md);
@@ -186,15 +228,6 @@
       font-family:Arial, Helvetica, sans-serif; font-weight:900;
     }
 
-    .zeichen-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
-    .zeichen-card { min-height:182px; padding:16px; border-radius:var(--radius-md); }
-    .zeichen-icon {
-      width:44px; height:44px; display:grid; place-items:center; margin-bottom:12px;
-      border-radius:13px; color:white; background:var(--section-accent);
-      font-family:Arial, Helvetica, sans-serif; font-size:.82rem; font-weight:900; letter-spacing:.04em;
-    }
-    .zeichen-card p { color:var(--muted); font-size:.96rem; line-height:1.45; }
-
     .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
     .tag { padding:6px 10px; border-radius:999px; font-family:Arial, Helvetica, sans-serif; font-size:.8rem; }
 
@@ -210,7 +243,6 @@
     }
 
     @media (max-width:900px) {
-      .quick-tiles, .zeichen-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .micro-row, .checklist { grid-template-columns:1fr; }
     }
 
@@ -218,11 +250,12 @@
       body { font-size:17px; }
       .page { padding:18px 12px 42px; }
       header, section { padding:22px 18px; }
-      .split, .grid, .quick-tiles, .zeichen-grid { grid-template-columns:1fr; }
+      .split, .grid { grid-template-columns:1fr; }
       .time-item { grid-template-columns:1fr; gap:8px; }
       .section-head { display:block; }
       .section-label { display:inline-block; margin-top:12px; }
       nav a { font-size:.86rem; }
+      .pin { font-size:.62rem; }
     }
 
     @media print {
@@ -252,37 +285,10 @@
           <a href="#zeitplan">Zeitplan</a>
           <a href="#rueckstellung">Rückstellung</a>
           <a href="#betreuung">Betreuung</a>
-          <a href="#unterlagen">Unterlagen</a>
-          <a href="#zeichen">Zeichen</a>
+          <a href="#unterlagen">Lebensordner</a>
           <a href="#check">Mini-Check</a>
           <a href="#quellen">Quellen</a>
         </nav>
-
-        <div class="quick-tiles" aria-label="Schnellübersicht">
-          <a class="mini-tile tile-rose" href="#zeitplan">
-            <span>01 · Frist</span>
-            <strong>Post lesen</strong>
-            <small>Anmeldung, Antwortfrist und Beilagen prüfen.</small>
-          </a>
-
-          <a class="mini-tile tile-sand" href="#rueckstellung">
-            <span>02 · Klärung</span>
-            <strong>Start prüfen</strong>
-            <small>Wenn der Zeitpunkt nicht passt: früh nachfragen.</small>
-          </a>
-
-          <a class="mini-tile tile-sage" href="#betreuung">
-            <span>03 · Alltag</span>
-            <strong>Betreuung sichern</strong>
-            <small>Hort, Mittagstisch und Kosten separat anschauen.</small>
-          </a>
-
-          <a class="mini-tile tile-violet" href="#unterlagen">
-            <span>04 · Ablage</span>
-            <strong>Ordner füllen</strong>
-            <small>Zuteilung, Verträge und Entscheide auffindbar halten.</small>
-          </a>
-        </div>
       </header>
 
       <main>
@@ -300,6 +306,11 @@
                 Ein Kind wird einer Schule zugeteilt, die Eltern erhalten Schreiben, Fristen und Formulare,
                 und plötzlich sind Schulverwaltung, Schulleitung, Betreuung und manchmal auch Fachstellen beteiligt.
               </p>
+
+              <div class="pin-row" aria-label="Zeichen im Buch">
+                <span class="pin pin-kanton"><i>KT</i><span>kantonal unterschiedlich</span></span>
+                <span class="pin pin-beratung"><i>BE</i><span>Beratung möglich</span></span>
+              </div>
 
               <p>
                 In der Schweiz ist die Schule kantonal geregelt. Viele Details hängen zusätzlich von der Gemeinde ab.
@@ -350,6 +361,9 @@
               <div class="time">Vor der Anmeldung</div>
               <div>
                 <h3>Adresse und Kontakt prüfen</h3>
+                <div class="pin-row">
+                  <span class="pin pin-kanton"><i>KT</i><span>Gemeinde prüfen</span></span>
+                </div>
                 <p>
                   Die Schulverwaltung arbeitet mit offiziellen Meldedaten.
                   Wenn Adresse, Telefonnummer oder E-Mail nicht stimmen, kommen wichtige Informationen zu spät oder gar nicht an.
@@ -361,6 +375,10 @@
               <div class="time">Wenn Post kommt</div>
               <div>
                 <h3>Anmeldeformular lesen</h3>
+                <div class="pin-row">
+                  <span class="pin pin-ordner"><i>LO</i><span>ablegen</span></span>
+                  <span class="pin pin-online"><i>ON</i><span>Formular möglich</span></span>
+                </div>
                 <p>
                   Die Eltern erhalten von Gemeinde oder Schule die Anmeldung für Kindergarten oder Schule.
                   Lies das Schreiben ganz. Entscheidend sind Frist, Unterschriften, Beilagen und Rückfragen.
@@ -378,6 +396,10 @@
               <div class="time">Vor dem Start</div>
               <div>
                 <h3>Zuteilung und offene Fragen klären</h3>
+                <div class="pin-row">
+                  <span class="pin pin-ordner"><i>LO</i><span>Zuteilung sichern</span></span>
+                  <span class="pin pin-beratung"><i>BE</i><span>nachfragen</span></span>
+                </div>
                 <p>
                   Irgendwann kommt die Zuteilung zu Kindergarten, Schule oder Klasse.
                   Jetzt solltest du prüfen: Ist der Schulweg klar? Gibt es Betreuung? Muss die Schule etwas Wichtiges wissen?
@@ -389,6 +411,10 @@
               <div class="time">Rechtzeitig</div>
               <div>
                 <h3>Betreuung separat anmelden</h3>
+                <div class="pin-row">
+                  <span class="pin pin-online"><i>ON</i><span>Anmeldung möglich</span></span>
+                  <span class="pin pin-kanton"><i>KT</i><span>lokale Frist</span></span>
+                </div>
                 <p>
                   Unterricht und Betreuung sind zwei verschiedene Dinge.
                   Mittagstisch, Hort, Morgenbetreuung oder Nachmittagsbetreuung müssen oft separat angemeldet werden.
@@ -406,6 +432,9 @@
               <div class="time">Schuljahresbeginn</div>
               <div>
                 <h3>Start organisieren</h3>
+                <div class="pin-row">
+                  <span class="pin pin-ordner"><i>LO</i><span>alles auffindbar</span></span>
+                </div>
                 <p>
                   Stundenplan, Schulweg, Betreuung, Kontaktpersonen und Notfallnummern sollten jetzt nicht mehr lose herumfliegen.
                   Lege alles an einem Ort ab.
@@ -419,6 +448,11 @@
           <div class="section-head">
             <h2>Wenn der Start noch nicht passt</h2>
             <span class="section-label">Abklären</span>
+          </div>
+
+          <div class="pin-row">
+            <span class="pin pin-beratung"><i>BE</i><span>Fachstelle</span></span>
+            <span class="pin pin-kanton"><i>KT</i><span>Einzelfall</span></span>
           </div>
 
           <p>
@@ -464,6 +498,12 @@
           <div class="section-head">
             <h2>Betreuung ist ein eigener Schritt</h2>
             <span class="section-label">Alltag</span>
+          </div>
+
+          <div class="pin-row">
+            <span class="pin pin-online"><i>ON</i><span>online möglich</span></span>
+            <span class="pin pin-kanton"><i>KT</i><span>kommunal geregelt</span></span>
+            <span class="pin pin-beratung"><i>BE</i><span>bei Unsicherheit</span></span>
           </div>
 
           <p>
@@ -516,6 +556,10 @@
             <span class="section-label">Ablage</span>
           </div>
 
+          <div class="pin-row">
+            <span class="pin pin-ordner"><i>LO</i><span>aufbewahren</span></span>
+          </div>
+
           <p>
             Für Schule und Betreuung reicht ein einfacher Ordner oder digitaler Ablageort.
             Er muss nicht schön sein. Auffindbar reicht.
@@ -533,43 +577,15 @@
           </ul>
         </section>
 
-        <section id="zeichen" class="sec-zeichen">
-          <div class="section-head">
-            <h2>Welche Zeichen aus dem Buch hier passen</h2>
-            <span class="section-label">Mini-Kacheln</span>
-          </div>
-
-          <div class="zeichen-grid">
-            <div class="zeichen-card">
-              <div class="zeichen-icon">LO</div>
-              <h3>Lebensordner</h3>
-              <p>Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.</p>
-            </div>
-
-            <div class="zeichen-card">
-              <div class="zeichen-icon">ON</div>
-              <h3>Online möglich</h3>
-              <p>Viele Gemeinden stellen Formulare, Anmeldung, Betreuung oder Beitragsrechner online bereit.</p>
-            </div>
-
-            <div class="zeichen-card">
-              <div class="zeichen-icon">KT</div>
-              <h3>Kantonal unterschiedlich</h3>
-              <p>Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.</p>
-            </div>
-
-            <div class="zeichen-card">
-              <div class="zeichen-icon">BE</div>
-              <h3>Lass dich beraten</h3>
-              <p>Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit, schulpsychologischer Dienst oder Fachstellen.</p>
-            </div>
-          </div>
-        </section>
-
         <section id="check" class="sec-check">
           <div class="section-head">
             <h2>Mini-Check vor dem Absenden</h2>
             <span class="section-label">Prüfen</span>
+          </div>
+
+          <div class="pin-row">
+            <span class="pin pin-ordner"><i>LO</i><span>Kopie sichern</span></span>
+            <span class="pin pin-beratung"><i>BE</i><span>bei Zweifel</span></span>
           </div>
 
           <ul class="checklist">
@@ -596,6 +612,11 @@
           <div class="section-head">
             <h2>Quellen und Nachprüfen</h2>
             <span class="section-label">Stand prüfen</span>
+          </div>
+
+          <div class="pin-row">
+            <span class="pin pin-kanton"><i>KT</i><span>Regel prüfen</span></span>
+            <span class="pin pin-online"><i>ON</i><span>Links</span></span>
           </div>
 
           <p>
