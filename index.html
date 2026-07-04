@@ -7,413 +7,230 @@
 
   <style>
     :root {
-      --paper: #fff8f3;
-      --paper-deep: #f5ece6;
-      --ink: #241c18;
-      --muted: #6f625b;
-
-      --accent: #b14c75;
-      --accent-dark: #8f345b;
-      --accent-soft: #f3dfe8;
-      --accent-quiet: #faeef3;
-
-      --line: rgba(36, 28, 24, 0.16);
-      --line-strong: rgba(177, 76, 117, 0.36);
-
-      --white: rgba(255, 255, 255, 0.76);
-      --shadow: 0 18px 45px rgba(42, 30, 24, 0.10);
-
-      --radius-large: 28px;
-      --radius: 20px;
-      --radius-small: 14px;
-
-      --sec-rose: #fff5f8;
-      --sec-blush: #fdf1f4;
-      --sec-sand: #fcf6ef;
-      --sec-apricot: #fff7f1;
-      --sec-lilac: #f8f3fb;
-      --sec-cream: #fffaf5;
-      --sec-mist: #faf6f8;
+      --ink:#241c18; --muted:#665852; --paper:#fff8f1; --paper-2:#f5ece3;
+      --line:rgba(36,28,24,.16); --shadow:0 18px 44px rgba(42,30,24,.11);
+      --magenta:#b14c75; --magenta-dark:#873453;
+      --rose-bg:#ffe8f1; --rose-mid:#fff7fa; --rose-accent:#b14c75;
+      --sand-bg:#fff0d2; --sand-mid:#fff9ee; --sand-accent:#b87428;
+      --violet-bg:#eee5ff; --violet-mid:#fbf8ff; --violet-accent:#68529d;
+      --sage-bg:#e5f5eb; --sage-mid:#f7fff9; --sage-accent:#3f8a62;
+      --peach-bg:#ffe9dc; --peach-mid:#fff8f4; --peach-accent:#bf6644;
+      --blue-bg:#e4f1ff; --blue-mid:#f7fbff; --blue-accent:#3974a8;
+      --mist-bg:#eeeeea; --mist-mid:#fbfbf8; --mist-accent:#756e5f;
+      --radius-xl:30px; --radius-lg:22px; --radius-md:16px; --radius-sm:12px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
 
     body {
-      margin: 0;
-      color: var(--ink);
+      margin:0; color:var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(177, 76, 117, 0.14), transparent 34rem),
-        linear-gradient(180deg, #fffaf6 0%, var(--paper) 54%, var(--paper-deep) 100%);
-      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.55;
+        radial-gradient(circle at 0 0, rgba(177,76,117,.18), transparent 34rem),
+        radial-gradient(circle at 100% 100%, rgba(184,116,40,.13), transparent 34rem),
+        linear-gradient(180deg,#fffaf6 0%,var(--paper) 56%,var(--paper-2) 100%);
+      font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+      font-size:18px; line-height:1.56;
     }
 
-    .page {
-      min-height: 100vh;
-      width: 100%;
-      padding: 34px 18px 58px;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-    }
+    .page { min-height:100vh; padding:34px 18px 60px; }
+    .wrap { max-width:1060px; margin:0 auto; }
 
     header {
-      padding: 34px 30px 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-large);
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: var(--shadow);
+      padding:34px 32px 30px; border:1px solid var(--line); border-radius:var(--radius-xl);
+      background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(255,232,241,.72));
+      box-shadow:var(--shadow);
     }
 
     .kicker {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 13px 6px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      color: var(--accent-dark);
-      background: var(--accent-soft);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
+      display:inline-block; margin-bottom:18px; padding:7px 13px 6px;
+      border:1px solid rgba(177,76,117,.38); border-radius:999px;
+      color:var(--magenta-dark); background:#f5dce7;
+      font-family:Arial, Helvetica, sans-serif; font-size:.76rem; font-weight:800;
+      letter-spacing:.09em; text-transform:uppercase;
     }
 
     h1 {
-      max-width: 840px;
-      margin: 0;
-      font-size: clamp(2.25rem, 5.3vw, 4.35rem);
-      line-height: 0.96;
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      max-width:850px; margin:0; font-size:clamp(2.25rem,5.2vw,4.45rem);
+      line-height:.97; font-weight:700; letter-spacing:-.04em;
     }
 
     .subtitle {
-      max-width: 760px;
-      margin: 22px 0 0;
-      color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.25rem);
+      max-width:790px; margin:22px 0 0; color:var(--muted);
+      font-size:clamp(1.06rem,1.9vw,1.24rem);
     }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 26px;
-      font-family: Arial, Helvetica, sans-serif;
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:26px;
+      font-family:Arial, Helvetica, sans-serif;
     }
 
     nav a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 8px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.58);
-      text-decoration: none;
-      font-size: 0.9rem;
+      display:inline-flex; align-items:center; min-height:38px; padding:8px 13px;
+      border:1px solid var(--line); border-radius:999px; color:var(--ink);
+      background:rgba(255,255,255,.72); text-decoration:none; font-size:.9rem;
     }
 
-    nav a:hover {
-      border-color: var(--line-strong);
-      background: var(--accent-quiet);
+    .quick-tiles {
+      display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:26px;
     }
 
-    main {
-      display: grid;
-      gap: 18px;
-      margin-top: 22px;
+    .mini-tile {
+      display:block; min-height:112px; padding:14px 14px 13px;
+      border:1px solid rgba(36,28,24,.14); border-radius:var(--radius-md);
+      color:var(--ink); text-decoration:none; box-shadow:0 9px 20px rgba(42,30,24,.07);
     }
+
+    .mini-tile span, .mini-tile small { display:block; font-family:Arial, Helvetica, sans-serif; }
+    .mini-tile span { margin-bottom:10px; font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; opacity:.82; }
+    .mini-tile strong { display:block; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:1rem; line-height:1.2; }
+    .mini-tile small { color:var(--muted); font-size:.8rem; line-height:1.35; }
+
+    .tile-rose { background:linear-gradient(145deg,var(--rose-bg),#fff7fa); border-color:rgba(177,76,117,.30); }
+    .tile-sand { background:linear-gradient(145deg,var(--sand-bg),#fff8ea); border-color:rgba(184,116,40,.30); }
+    .tile-sage { background:linear-gradient(145deg,var(--sage-bg),#f6fff9); border-color:rgba(63,138,98,.30); }
+    .tile-violet { background:linear-gradient(145deg,var(--violet-bg),#faf7ff); border-color:rgba(104,82,157,.30); }
+
+    main { display:grid; gap:22px; margin-top:24px; }
 
     section {
-      position: relative;
-      overflow: hidden;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      --section-bg:#fff; --section-mid:#fff; --section-accent:var(--magenta);
+      position:relative; overflow:hidden; padding:30px;
+      border:1px solid rgba(36,28,24,.14); border-radius:var(--radius-lg);
+      background:linear-gradient(135deg,var(--section-bg) 0%,var(--section-mid) 100%);
+      box-shadow:var(--shadow);
     }
 
     section::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 6px;
-      background: linear-gradient(180deg, var(--accent), rgba(177, 76, 117, 0.16));
-      opacity: 0.72;
+      content:""; position:absolute; inset:0 auto 0 0; width:9px;
+      background:var(--section-accent); opacity:.85;
     }
 
-    .sec-1 { background: var(--sec-rose); }
-    .sec-2 { background: var(--sec-sand); }
-    .sec-3 { background: var(--sec-blush); }
-    .sec-4 { background: var(--sec-apricot); }
-    .sec-5 { background: var(--sec-lilac); }
-    .sec-6 { background: var(--sec-cream); }
-    .sec-7 { background: var(--sec-mist); }
+    .sec-kurz { --section-bg:var(--rose-bg); --section-mid:var(--rose-mid); --section-accent:var(--rose-accent); }
+    .sec-zeit { --section-bg:var(--sand-bg); --section-mid:var(--sand-mid); --section-accent:var(--sand-accent); }
+    .sec-rueck { --section-bg:var(--violet-bg); --section-mid:var(--violet-mid); --section-accent:var(--violet-accent); }
+    .sec-betreuung { --section-bg:var(--sage-bg); --section-mid:var(--sage-mid); --section-accent:var(--sage-accent); }
+    .sec-ordner { --section-bg:var(--peach-bg); --section-mid:var(--peach-mid); --section-accent:var(--peach-accent); }
+    .sec-zeichen { --section-bg:var(--blue-bg); --section-mid:var(--blue-mid); --section-accent:var(--blue-accent); }
+    .sec-check { --section-bg:var(--mist-bg); --section-mid:var(--mist-mid); --section-accent:var(--mist-accent); }
+    .sec-quellen { --section-bg:#fff0f6; --section-mid:#fff9fb; --section-accent:var(--magenta); }
 
-    h2 {
-      margin: 0 0 15px;
-      font-size: clamp(1.55rem, 2.8vw, 2.15rem);
-      line-height: 1.1;
-      letter-spacing: -0.025em;
+    .section-head {
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:16px; margin-bottom:14px;
     }
 
-    h3 {
-      margin: 0 0 8px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.98rem;
-      letter-spacing: 0.01em;
+    .section-label {
+      flex:0 0 auto; padding:7px 10px 6px; border-radius:999px; color:white;
+      background:var(--section-accent); font-family:Arial, Helvetica, sans-serif;
+      font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+      box-shadow:0 8px 18px rgba(42,30,24,.13);
     }
 
-    p {
-      margin: 0 0 14px;
+    h2 { margin:0; font-size:clamp(1.6rem,2.9vw,2.28rem); line-height:1.08; letter-spacing:-.025em; }
+    h3 { margin:0 0 8px; font-family:Arial, Helvetica, sans-serif; font-size:.98rem; letter-spacing:.01em; }
+    p { margin:0 0 14px; }
+    p:last-child { margin-bottom:0; }
+    a { color:var(--magenta-dark); text-underline-offset:3px; text-decoration-thickness:1px; }
+
+    .split { display:grid; grid-template-columns:1.08fr .92fr; gap:18px; align-items:start; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
+
+    .card, .quote-box, .micro-card, .time-item, .checklist li, .zeichen-card, .tag {
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(36,28,24,.13);
+      box-shadow:0 7px 18px rgba(42,30,24,.045);
     }
 
-    p:last-child {
-      margin-bottom: 0;
-    }
+    .card { padding:18px; border-radius:var(--radius-md); }
+    .quote-box { padding:19px 20px; border-radius:18px; }
 
-    a {
-      color: var(--accent-dark);
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
+    .micro-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:16px; }
+    .micro-card {
+      min-height:72px; padding:11px 12px 10px; border-radius:var(--radius-sm);
+      font-family:Arial, Helvetica, sans-serif; font-size:.78rem; line-height:1.35;
     }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .card {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-small);
-      background: rgba(255, 255, 255, 0.62);
-    }
-
-    .quote-box {
-      padding: 18px 20px;
-      border: 1px solid var(--line-strong);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.50);
+    .micro-card b {
+      display:block; margin-bottom:4px; color:var(--section-accent);
+      font-size:.72rem; letter-spacing:.07em; text-transform:uppercase;
     }
 
     .praxisnotiz {
-      display: block;
-      margin-top: 12px;
-      padding: 11px 13px 10px;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 12px 12px 0;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.58);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.78rem;
-      line-height: 1.45;
+      display:block; margin-top:12px; padding:10px 12px 9px;
+      border-left:4px solid var(--section-accent); border-radius:0 12px 12px 0;
+      color:var(--muted); background:rgba(255,255,255,.58);
+      font-family:Arial, Helvetica, sans-serif; font-size:.75rem; line-height:1.42;
     }
+    .praxisnotiz strong { color:var(--section-accent); font-weight:800; }
 
-    .praxisnotiz strong {
-      color: var(--accent-dark);
-      font-weight: 800;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 0;
-      margin-top: 8px;
-    }
-
+    .timeline { display:grid; gap:12px; margin-top:8px; }
     .time-item {
-      display: grid;
-      grid-template-columns: 165px 1fr;
-      gap: 18px;
-      padding: 17px 0;
-      border-top: 1px solid var(--line);
+      display:grid; grid-template-columns:150px 1fr; gap:18px; padding:18px; border-radius:var(--radius-md);
     }
-
-    .time-item:first-child {
-      border-top: 0;
-      padding-top: 4px;
-    }
-
     .time {
-      color: var(--accent-dark);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
+      align-self:start; display:inline-flex; width:fit-content; padding:7px 9px 6px;
+      border-radius:10px; color:white; background:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif; font-size:.72rem; font-weight:800;
+      letter-spacing:.07em; text-transform:uppercase; line-height:1.15;
     }
 
     .checklist {
-      display: grid;
-      gap: 10px;
-      margin: 15px 0 0;
-      padding: 0;
-      list-style: none;
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;
+      margin:16px 0 0; padding:0; list-style:none;
     }
-
     .checklist li {
-      position: relative;
-      padding: 12px 14px 12px 42px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.54);
+      position:relative; min-height:58px; padding:13px 14px 13px 42px; border-radius:15px;
     }
-
     .checklist li::before {
-      content: "✓";
-      position: absolute;
-      left: 15px;
-      top: 11px;
-      color: var(--accent);
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 900;
+      content:"✓"; position:absolute; left:15px; top:13px; color:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif; font-weight:900;
     }
 
-    .zeichen-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    .zeichen-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .zeichen-card { min-height:182px; padding:16px; border-radius:var(--radius-md); }
+    .zeichen-icon {
+      width:44px; height:44px; display:grid; place-items:center; margin-bottom:12px;
+      border-radius:13px; color:white; background:var(--section-accent);
+      font-family:Arial, Helvetica, sans-serif; font-size:.82rem; font-weight:900; letter-spacing:.04em;
     }
+    .zeichen-card p { color:var(--muted); font-size:.96rem; line-height:1.45; }
 
-    .zeichen-card {
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-small);
-      background: rgba(255, 255, 255, 0.62);
-    }
+    .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .tag { padding:6px 10px; border-radius:999px; font-family:Arial, Helvetica, sans-serif; font-size:.8rem; }
 
-    .icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-    }
-
-    .icon-folder { background: #b80f24; }
-    .icon-online { background: #1f7897; }
-    .icon-region { background: #27272a; }
-    .icon-help { background: #68148d; }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.6);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-    }
-
-    .sources ul {
-      margin: 12px 0 0;
-      padding-left: 1.1rem;
-    }
-
+    .sources ul { margin:12px 0 0; padding-left:1.1rem; }
     .sources li {
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      line-height: 1.45;
+      margin-bottom:8px; color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif; font-size:.82rem; line-height:1.45;
     }
 
     footer {
-      margin-top: 20px;
-      padding: 0 4px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      line-height: 1.45;
+      margin-top:20px; padding:0 4px; color:var(--muted);
+      font-family:Arial, Helvetica, sans-serif; font-size:.8rem; line-height:1.45;
     }
 
-    @media (max-width: 760px) {
-      body {
-        font-size: 17px;
-      }
+    @media (max-width:900px) {
+      .quick-tiles, .zeichen-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .micro-row, .checklist { grid-template-columns:1fr; }
+    }
 
-      .page {
-        padding: 18px 12px 42px;
-      }
-
-      header,
-      section {
-        padding: 22px 18px;
-      }
-
-      .split,
-      .grid,
-      .zeichen-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .time-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-
-      nav a {
-        font-size: 0.86rem;
-      }
+    @media (max-width:700px) {
+      body { font-size:17px; }
+      .page { padding:18px 12px 42px; }
+      header, section { padding:22px 18px; }
+      .split, .grid, .quick-tiles, .zeichen-grid { grid-template-columns:1fr; }
+      .time-item { grid-template-columns:1fr; gap:8px; }
+      .section-head { display:block; }
+      .section-label { display:inline-block; margin-top:12px; }
+      nav a { font-size:.86rem; }
     }
 
     @media print {
-      body {
-        background: #fff8f3;
-      }
-
-      .page {
-        padding: 0;
-      }
-
-      .wrap {
-        max-width: none;
-      }
-
-      nav {
-        display: none;
-      }
-
-      header,
-      section {
-        break-inside: avoid;
-        box-shadow: none;
-      }
+      body { background:#fff8f3; }
+      .page { padding:0; }
+      .wrap { max-width:none; }
+      nav { display:none; }
+      header, section { break-inside:avoid; box-shadow:none; }
     }
   </style>
 </head>
@@ -424,9 +241,7 @@
 
       <header>
         <span class="kicker">Digitale Vertiefung</span>
-
         <h1>Einschulung: Wenn Schule offiziell wird</h1>
-
         <p class="subtitle">
           Diese Seite gehört zur Buchseite über Kindergarten, Schuleintritt und die ersten offiziellen Schulschritte.
           Sie hilft dir, die wichtigsten Punkte zu prüfen, ohne dich im Behördennebel zu verlaufen.
@@ -442,12 +257,41 @@
           <a href="#check">Mini-Check</a>
           <a href="#quellen">Quellen</a>
         </nav>
+
+        <div class="quick-tiles" aria-label="Schnellübersicht">
+          <a class="mini-tile tile-rose" href="#zeitplan">
+            <span>01 · Frist</span>
+            <strong>Post lesen</strong>
+            <small>Anmeldung, Antwortfrist und Beilagen prüfen.</small>
+          </a>
+
+          <a class="mini-tile tile-sand" href="#rueckstellung">
+            <span>02 · Klärung</span>
+            <strong>Start prüfen</strong>
+            <small>Wenn der Zeitpunkt nicht passt: früh nachfragen.</small>
+          </a>
+
+          <a class="mini-tile tile-sage" href="#betreuung">
+            <span>03 · Alltag</span>
+            <strong>Betreuung sichern</strong>
+            <small>Hort, Mittagstisch und Kosten separat anschauen.</small>
+          </a>
+
+          <a class="mini-tile tile-violet" href="#unterlagen">
+            <span>04 · Ablage</span>
+            <strong>Ordner füllen</strong>
+            <small>Zuteilung, Verträge und Entscheide auffindbar halten.</small>
+          </a>
+        </div>
       </header>
 
       <main>
 
-        <section id="kurz" class="sec-1">
-          <h2>Kurz gesagt</h2>
+        <section id="kurz" class="sec-kurz">
+          <div class="section-head">
+            <h2>Kurz gesagt</h2>
+            <span class="section-label">Überblick</span>
+          </div>
 
           <div class="split">
             <div>
@@ -462,10 +306,25 @@
                 Darum gilt: zuerst den Wohnkanton prüfen, dann die Gemeinde.
               </p>
 
+              <div class="micro-row" aria-label="Kleine Orientierung">
+                <div class="micro-card">
+                  <b>Kanton</b>
+                  Stichtage und Schulpflicht werden kantonal geregelt.
+                </div>
+                <div class="micro-card">
+                  <b>Gemeinde</b>
+                  Anmeldung, Zuteilung und Betreuung laufen oft lokal.
+                </div>
+                <div class="micro-card">
+                  <b>Familie</b>
+                  Alltag, Schulweg und Betreuung müssen praktisch funktionieren.
+                </div>
+              </div>
+
               <span class="praxisnotiz">
                 <strong>Praxisnotiz:</strong>
                 In vielen Kantonen beginnt die obligatorische Schulzeit mit dem Kindergarten.
-                Stichtage und Abläufe können sich unterscheiden. Die genaue Regel steht beim Kanton oder bei der Gemeinde.
+                Die genaue Regel steht beim Kanton oder bei der Gemeinde.
               </span>
             </div>
 
@@ -480,8 +339,11 @@
           </div>
         </section>
 
-        <section id="zeitplan" class="sec-2">
-          <h2>Was ungefähr wann passiert</h2>
+        <section id="zeitplan" class="sec-zeit">
+          <div class="section-head">
+            <h2>Was ungefähr wann passiert</h2>
+            <span class="section-label">Zeitplan</span>
+          </div>
 
           <div class="timeline">
             <div class="time-item">
@@ -553,8 +415,11 @@
           </div>
         </section>
 
-        <section id="rueckstellung" class="sec-3">
-          <h2>Wenn der Start noch nicht passt</h2>
+        <section id="rueckstellung" class="sec-rueck">
+          <div class="section-head">
+            <h2>Wenn der Start noch nicht passt</h2>
+            <span class="section-label">Abklären</span>
+          </div>
 
           <p>
             Manchmal wirkt ein Kind noch nicht bereit für den Kindergarten- oder Schulstart.
@@ -595,8 +460,11 @@
           </span>
         </section>
 
-        <section id="betreuung" class="sec-4">
-          <h2>Betreuung ist ein eigener Schritt</h2>
+        <section id="betreuung" class="sec-betreuung">
+          <div class="section-head">
+            <h2>Betreuung ist ein eigener Schritt</h2>
+            <span class="section-label">Alltag</span>
+          </div>
 
           <p>
             Schule heisst nicht automatisch, dass der ganze Tag abgedeckt ist.
@@ -621,15 +489,32 @@
             </div>
           </div>
 
+          <div class="micro-row" aria-label="Betreuung prüfen">
+            <div class="micro-card">
+              <b>Zeit</b>
+              Vor Unterricht, Mittag, Nachmittag und Ferien getrennt prüfen.
+            </div>
+            <div class="micro-card">
+              <b>Kosten</b>
+              Tarife können einkommensabhängig sein.
+            </div>
+            <div class="micro-card">
+              <b>Frist</b>
+              Anmeldung früh erledigen, nicht erst zum Schulstart.
+            </div>
+          </div>
+
           <span class="praxisnotiz">
             <strong>Prüfpunkt:</strong>
-            Betreuung nicht erst am ersten Schultag anschauen.
-            Wer arbeitet, Termine hat oder Entlastung braucht, sollte diesen Punkt früh klären.
+            Wer arbeitet, Termine hat oder Entlastung braucht, sollte Betreuung früh klären.
           </span>
         </section>
 
-        <section id="unterlagen" class="sec-5">
-          <h2>Das gehört in den Lebensordner</h2>
+        <section id="unterlagen" class="sec-ordner">
+          <div class="section-head">
+            <h2>Das gehört in den Lebensordner</h2>
+            <span class="section-label">Ablage</span>
+          </div>
 
           <p>
             Für Schule und Betreuung reicht ein einfacher Ordner oder digitaler Ablageort.
@@ -648,54 +533,44 @@
           </ul>
         </section>
 
-        <section id="zeichen" class="sec-6">
-          <h2>Welche Zeichen aus dem Buch hier passen</h2>
+        <section id="zeichen" class="sec-zeichen">
+          <div class="section-head">
+            <h2>Welche Zeichen aus dem Buch hier passen</h2>
+            <span class="section-label">Mini-Kacheln</span>
+          </div>
 
           <div class="zeichen-grid">
             <div class="zeichen-card">
-              <div class="icon icon-folder">□</div>
-              <div>
-                <h3>Lebensordner</h3>
-                <p>
-                  Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.
-                </p>
-              </div>
+              <div class="zeichen-icon">LO</div>
+              <h3>Lebensordner</h3>
+              <p>Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.</p>
             </div>
 
             <div class="zeichen-card">
-              <div class="icon icon-online">↗</div>
-              <div>
-                <h3>Online möglich</h3>
-                <p>
-                  Viele Gemeinden stellen Formulare, Anmeldung, Betreuung oder Beitragsrechner online bereit.
-                </p>
-              </div>
+              <div class="zeichen-icon">ON</div>
+              <h3>Online möglich</h3>
+              <p>Viele Gemeinden stellen Formulare, Anmeldung, Betreuung oder Beitragsrechner online bereit.</p>
             </div>
 
             <div class="zeichen-card">
-              <div class="icon icon-region">△</div>
-              <div>
-                <h3>Kantonal unterschiedlich</h3>
-                <p>
-                  Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.
-                </p>
-              </div>
+              <div class="zeichen-icon">KT</div>
+              <h3>Kantonal unterschiedlich</h3>
+              <p>Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.</p>
             </div>
 
             <div class="zeichen-card">
-              <div class="icon icon-help">?</div>
-              <div>
-                <h3>Lass dich beraten</h3>
-                <p>
-                  Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit, schulpsychologischer Dienst oder Fachstellen.
-                </p>
-              </div>
+              <div class="zeichen-icon">BE</div>
+              <h3>Lass dich beraten</h3>
+              <p>Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit, schulpsychologischer Dienst oder Fachstellen.</p>
             </div>
           </div>
         </section>
 
-        <section id="check" class="sec-7">
-          <h2>Mini-Check vor dem Absenden</h2>
+        <section id="check" class="sec-check">
+          <div class="section-head">
+            <h2>Mini-Check vor dem Absenden</h2>
+            <span class="section-label">Prüfen</span>
+          </div>
 
           <ul class="checklist">
             <li>Ist das Formular vollständig ausgefüllt?</li>
@@ -717,8 +592,11 @@
           </div>
         </section>
 
-        <section id="quellen" class="sources sec-1">
-          <h2>Quellen und Nachprüfen</h2>
+        <section id="quellen" class="sources sec-quellen">
+          <div class="section-head">
+            <h2>Quellen und Nachprüfen</h2>
+            <span class="section-label">Stand prüfen</span>
+          </div>
 
           <p>
             Regeln, Fristen und Links können sich ändern.
@@ -726,32 +604,27 @@
           </p>
 
           <ul>
-            <li>
-              ch.ch:
+            <li>ch.ch:
               <a href="https://www.ch.ch/de/schule-und-bildung/obligatorische-schule/schule-und-kindergarten/" target="_blank" rel="noopener">
                 Kindergarten und Schulpflicht in der Schweiz
               </a>
             </li>
-            <li>
-              Kanton Zürich:
+            <li>Kanton Zürich:
               <a href="https://www.zh.ch/de/bildung/schulen/volksschule/kindergarten.html" target="_blank" rel="noopener">
                 Kindergarten
               </a>
             </li>
-            <li>
-              Stadt Winterthur:
+            <li>Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten" target="_blank" rel="noopener">
                 Kindergarteneintritt
               </a>
             </li>
-            <li>
-              Stadt Winterthur:
+            <li>Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulerganzende-betreuung/kosten-und-anmeldung" target="_blank" rel="noopener">
                 schulergänzende Betreuung, Kosten und Anmeldung
               </a>
             </li>
-            <li>
-              Stadt Winterthur:
+            <li>Stadt Winterthur:
               <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/bildung-und-schule/schulen-und-schulhaeuser/schulsystem-im-ueberblick/kindergarten/rueckstellung-von-der-schulpflicht-1" target="_blank" rel="noopener">
                 Rückstellung von der Schulpflicht
               </a>
