@@ -20,12 +20,20 @@
       --line: rgba(36, 28, 24, 0.16);
       --line-strong: rgba(177, 76, 117, 0.36);
 
-      --white: rgba(255, 255, 255, 0.74);
+      --white: rgba(255, 255, 255, 0.76);
       --shadow: 0 18px 45px rgba(42, 30, 24, 0.10);
 
       --radius-large: 28px;
       --radius: 20px;
       --radius-small: 14px;
+
+      --sec-rose: #fff5f8;
+      --sec-blush: #fdf1f4;
+      --sec-sand: #fcf6ef;
+      --sec-apricot: #fff7f1;
+      --sec-lilac: #f8f3fb;
+      --sec-cream: #fffaf5;
+      --sec-mist: #faf6f8;
     }
 
     * {
@@ -58,16 +66,12 @@
       margin: 0 auto;
     }
 
-    header,
-    section {
-      border: 1px solid var(--line);
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-
     header {
       padding: 34px 30px 30px;
+      border: 1px solid var(--line);
       border-radius: var(--radius-large);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
     }
 
     .kicker {
@@ -137,7 +141,9 @@
       position: relative;
       overflow: hidden;
       padding: 28px;
+      border: 1px solid var(--line);
       border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     section::before {
@@ -148,6 +154,14 @@
       background: linear-gradient(180deg, var(--accent), rgba(177, 76, 117, 0.16));
       opacity: 0.72;
     }
+
+    .sec-1 { background: var(--sec-rose); }
+    .sec-2 { background: var(--sec-sand); }
+    .sec-3 { background: var(--sec-blush); }
+    .sec-4 { background: var(--sec-apricot); }
+    .sec-5 { background: var(--sec-lilac); }
+    .sec-6 { background: var(--sec-cream); }
+    .sec-7 { background: var(--sec-mist); }
 
     h2 {
       margin: 0 0 15px;
@@ -194,7 +208,14 @@
       padding: 18px;
       border: 1px solid var(--line);
       border-radius: var(--radius-small);
-      background: rgba(255, 255, 255, 0.58);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .quote-box {
+      padding: 18px 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.50);
     }
 
     .praxisnotiz {
@@ -204,7 +225,7 @@
       border-left: 4px solid var(--accent);
       border-radius: 0 12px 12px 0;
       color: var(--muted);
-      background: var(--accent-quiet);
+      background: rgba(255, 255, 255, 0.58);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.78rem;
       line-height: 1.45;
@@ -213,13 +234,6 @@
     .praxisnotiz strong {
       color: var(--accent-dark);
       font-weight: 800;
-    }
-
-    .mini {
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.84rem;
-      line-height: 1.48;
     }
 
     .timeline {
@@ -276,12 +290,39 @@
       font-weight: 900;
     }
 
-    .quote-box {
-      padding: 18px 20px;
-      border: 1px solid var(--line-strong);
-      border-radius: 18px;
-      background: var(--accent-quiet);
+    .zeichen-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
+
+    .zeichen-card {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-small);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+
+    .icon-folder { background: #b80f24; }
+    .icon-online { background: #1f7897; }
+    .icon-region { background: #27272a; }
+    .icon-help { background: #68148d; }
 
     .tag-list {
       display: flex;
@@ -336,7 +377,8 @@
       }
 
       .split,
-      .grid {
+      .grid,
+      .zeichen-grid {
         grid-template-columns: 1fr;
       }
 
@@ -396,13 +438,15 @@
           <a href="#rueckstellung">Rückstellung</a>
           <a href="#betreuung">Betreuung</a>
           <a href="#unterlagen">Unterlagen</a>
+          <a href="#zeichen">Zeichen</a>
+          <a href="#check">Mini-Check</a>
           <a href="#quellen">Quellen</a>
         </nav>
       </header>
 
       <main>
 
-        <section id="kurz">
+        <section id="kurz" class="sec-1">
           <h2>Kurz gesagt</h2>
 
           <div class="split">
@@ -436,7 +480,7 @@
           </div>
         </section>
 
-        <section id="zeitplan">
+        <section id="zeitplan" class="sec-2">
           <h2>Was ungefähr wann passiert</h2>
 
           <div class="timeline">
@@ -509,7 +553,7 @@
           </div>
         </section>
 
-        <section id="rueckstellung">
+        <section id="rueckstellung" class="sec-3">
           <h2>Wenn der Start noch nicht passt</h2>
 
           <p>
@@ -551,7 +595,7 @@
           </span>
         </section>
 
-        <section id="betreuung">
+        <section id="betreuung" class="sec-4">
           <h2>Betreuung ist ein eigener Schritt</h2>
 
           <p>
@@ -584,7 +628,7 @@
           </span>
         </section>
 
-        <section id="unterlagen">
+        <section id="unterlagen" class="sec-5">
           <h2>Das gehört in den Lebensordner</h2>
 
           <p>
@@ -604,41 +648,53 @@
           </ul>
         </section>
 
-        <section>
+        <section id="zeichen" class="sec-6">
           <h2>Welche Zeichen aus dem Buch hier passen</h2>
 
-          <div class="grid">
-            <div class="card">
-              <h3>Lebensordner</h3>
-              <p>
-                Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.
-              </p>
+          <div class="zeichen-grid">
+            <div class="zeichen-card">
+              <div class="icon icon-folder">□</div>
+              <div>
+                <h3>Lebensordner</h3>
+                <p>
+                  Schulzuteilung, Anmeldebestätigung, Betreuungsvertrag und Entscheide aufbewahren.
+                </p>
+              </div>
             </div>
 
-            <div class="card">
-              <h3>Online möglich</h3>
-              <p>
-                Viele Gemeinden stellen Formulare, Anmeldung, Betreuung oder Beitragsrechner online bereit.
-              </p>
+            <div class="zeichen-card">
+              <div class="icon icon-online">↗</div>
+              <div>
+                <h3>Online möglich</h3>
+                <p>
+                  Viele Gemeinden stellen Formulare, Anmeldung, Betreuung oder Beitragsrechner online bereit.
+                </p>
+              </div>
             </div>
 
-            <div class="card">
-              <h3>Kantonal unterschiedlich</h3>
-              <p>
-                Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.
-              </p>
+            <div class="zeichen-card">
+              <div class="icon icon-region">△</div>
+              <div>
+                <h3>Kantonal unterschiedlich</h3>
+                <p>
+                  Schulpflicht, Stichtage, Fristen und Abläufe sind kantonal oder kommunal geregelt.
+                </p>
+              </div>
             </div>
 
-            <div class="card">
-              <h3>Lass dich beraten</h3>
-              <p>
-                Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit, schulpsychologischer Dienst oder Fachstellen.
-              </p>
+            <div class="zeichen-card">
+              <div class="icon icon-help">?</div>
+              <div>
+                <h3>Lass dich beraten</h3>
+                <p>
+                  Bei Unsicherheit helfen Schulverwaltung, Schulleitung, Schulsozialarbeit, schulpsychologischer Dienst oder Fachstellen.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section>
+        <section id="check" class="sec-7">
           <h2>Mini-Check vor dem Absenden</h2>
 
           <ul class="checklist">
@@ -661,7 +717,7 @@
           </div>
         </section>
 
-        <section id="quellen" class="sources">
+        <section id="quellen" class="sources sec-1">
           <h2>Quellen und Nachprüfen</h2>
 
           <p>
